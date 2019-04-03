@@ -144,8 +144,8 @@ func signHost(ca tls.Certificate, hosts []string) (cert tls.Certificate, err err
 	if x509ca, err = x509.ParseCertificate(ca.Certificate[0]); err != nil {
 		return
 	}
-	start := time.Unix(0, 0)
-	end, err := time.Parse("2006-01-02", "2049-12-31")
+	start, err := time.Parse("2006-01-02", "2019-01-01")
+        end, err := time.Parse("2006-01-02", "2020-12-31")
 	if err != nil {
 		panic(err)
 	}
